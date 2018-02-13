@@ -1,0 +1,11 @@
+Python Note
+
+1.I/O
+	print('string1','string2',…) //输出字符串，每个字符串之间会加一个空格输出	
+	var = input('prompt text')
+	//输入字符串，用var变量存起来，输入前有提示字符串'prompt text'输出
+
+2.注释与格式
+	# notes content: //注释以#开始，以：结束
+	Python使用缩进组织代码块，坚持用4个空格缩进
+	Python中用：来结束一个保留字语句
