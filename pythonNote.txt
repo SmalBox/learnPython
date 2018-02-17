@@ -2,6 +2,12 @@ Python Note
 
 1.I/O
 	print('string1','string2',…) //输出字符串，每个字符串之间会加一个空格输出	
+	print('I\'m ok.') //用反斜杠作为转义符号
+	print(r'\\\n\\') //用r'content'来标识不转义
+	print('''line1
+	... line2
+	... line3''')
+	//用'''...'''表示多行内容,...不是代码，在.py文件中不用写,多行字符串也可用前面加r来不转义
 	var = input('prompt text')
 	//输入字符串，用var变量存起来，输入前有提示字符串'prompt text'输出
 
@@ -9,3 +15,18 @@ Python Note
 	# notes content: //注释以#开始，以：结束
 	Python使用缩进组织代码块，坚持用4个空格缩进
 	Python中用：来结束一个保留字语句
+
+3.变量与基本运算
+	一种除法是‘/’计算结果是浮点数，即使整除也是浮点数
+	一种除法是‘//’两个整数除法仍然是整数
+
+4.字符串
+	ord() //获取字符的整数表示 例：>>>ord('A') 65
+	chr() //编码转化为对应字符 例：>>>chr(66) 'B'
+	>>>'\u4e2d\u6587' '中文' 用16进制写
+	>>>'ABC'.encode('ascii') b'ABC' 用ascii编码英文为bytes
+	>>>'中文'.encode('utf-8') b'\xe4\xb8\xad\xe6\x96\x87' 用utf-8编码中文bytes
+	>>>b'\xe4\xb8\xad\xe6\x96\x87'.decode('utf-8') '中文' 解析字节
+	>>>b'\xe4\xb8\xad\xff'.decode('utf-8',errors='ignore') '中'
+	传入errors='ignore'忽略解析时部分无效字节
+	>>>len('ABC') 3 >>>len('中文') 2 //计算包含了多少个字符
