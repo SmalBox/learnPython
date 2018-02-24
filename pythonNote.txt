@@ -8,8 +8,10 @@ Python Note
 	... line2
 	... line3''')
 	//用'''...'''表示多行内容,...不是代码，在.py文件中不用写,多行字符串也可用前面加r来不转义
+
 	var = input('prompt text')
 	//输入字符串，用var变量存起来，输入前有提示字符串'prompt text'输出
+	//input()输入的是字符串，如需数字比较需要用int()来转换字符为数字类型
 
 2.注释与格式
 	# notes content: //注释以#开始，以：结束
@@ -23,10 +25,51 @@ Python Note
 4.字符串
 	ord() //获取字符的整数表示 例：>>>ord('A') 65
 	chr() //编码转化为对应字符 例：>>>chr(66) 'B'
+
 	>>>'\u4e2d\u6587' '中文' 用16进制写
+
 	>>>'ABC'.encode('ascii') b'ABC' 用ascii编码英文为bytes
 	>>>'中文'.encode('utf-8') b'\xe4\xb8\xad\xe6\x96\x87' 用utf-8编码中文bytes
+
 	>>>b'\xe4\xb8\xad\xe6\x96\x87'.decode('utf-8') '中文' 解析字节
 	>>>b'\xe4\xb8\xad\xff'.decode('utf-8',errors='ignore') '中'
 	传入errors='ignore'忽略解析时部分无效字节
+
 	>>>len('ABC') 3 >>>len('中文') 2 //计算包含了多少个字符
+
+	>>>'hello, %s' % 'world' 'hello, world'
+	>>>'hi, %s, you have $%d.' % ('Li',1000) 'hi, Li, you have $1000'
+	//格式化占位符	占位符:	%d (整数) %f (浮点数) %s (字符串) %x (十六进制整数)
+	>>>print('%03d,%.2f' % (3,3.1415926)) 003 3.14
+	//占三个字符，用0补全。取小数点后两位。其中%要用%%转译
+	
+	>>>'hello, {0},成绩提升了 {1:.1f}%'.format('小明',17.125) 
+	'hello, 小明, 成绩提升了 17.1%'
+	//用format()格式化字符串。其中的%不用转译
+
+5.列表list
+	>>>classmates = ['person1', 'person2', 'person3'] //创建一个classmates列表
+	>>>classmates //输入列表名可输入列表内容： ['person1', 'person2', 'person3']
+	>>>len(classmates) //用len()获取列表元素个数
+	>>>classmates[0] //通过索引可访问元素内容：'person1'
+	>>>classmates[-1] //可通过传递-1参数访问最后一个元素，也可从后方向前访问
+	>>>classmates.append('person4') //可通过.append()向列表添加元素
+	>>>classmates.insert(1,'person1.5') //可通过.insert()想列表插入元素
+	>>>classmates.pop() //可通过.pop()删除列表尾部元素
+	>>>classmates.pop(1) //可通过.pop() 传参删除指定元素
+	>>>classmates[1] = 'people' //可通过索引直接给对应元素赋值
+	//列表中元素可以是不同类型.也可以是list类型,组成多维列表
+
+6.元组Tuple
+	>>>t = (1,2) //创建一个t元组
+	>>>t = (1,) //创建一个只有一个元素的元组，用逗号来区别数字1
+	//元组元素不可变，但是可以放入列表元素，让列表来变达到安全灵活的目的
+
+7.判断
+	>>>if x:
+	>>>    print('trueX')
+	>>>elif y:
+	>>>    print('trueY')
+	>>>else:
+	>>>    print('false')
+	//条件后面要加冒号，当一个if满足条件后，后面的else或elif都不执行
