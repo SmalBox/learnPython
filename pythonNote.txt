@@ -47,6 +47,10 @@ Python Note
 	'hello, 小明, 成绩提升了 17.1%'
 	//用format()格式化字符串。其中的%不用转译
 
+	>>>a = 'abc'
+	>>>b = a.replace('a', 'A')
+	//变量a中还是'abc',而.replace()方法是对字符串'abc'操作，创建一个新的字符串返回给b
+
 5.列表list
 	>>>classmates = ['person1', 'person2', 'person3'] //创建一个classmates列表
 	>>>classmates //输入列表名可输入列表内容： ['person1', 'person2', 'person3']
@@ -59,6 +63,10 @@ Python Note
 	>>>classmates.pop(1) //可通过.pop() 传参删除指定元素
 	>>>classmates[1] = 'people' //可通过索引直接给对应元素赋值
 	//列表中元素可以是不同类型.也可以是list类型,组成多维列表
+
+	>>>a = ['c', 'b', 'a']
+	>>>a.sort()
+	//.sort()对list内容进行排序,改变了list中的元素顺序
 
 6.元组Tuple
 	>>>t = (1,2) //创建一个t元组
@@ -73,3 +81,28 @@ Python Note
 	>>>else:
 	>>>    print('false')
 	//条件后面要加冒号，当一个if满足条件后，后面的else或elif都不执行
+
+8.循环
+	>>>sum = 0
+	>>>for x in range(101): //range（101）可以创建出一个从0到100的一个列表
+	>>>    sum = sum + x 
+	>>>print(sum)
+	//for in : 循环，将in后的列表或元组依次取出赋给for后的变量
+	>>>while n > 0:
+	//while : 循环 ，只要满足条件就不断循环
+	//python 支持break和continue操作
+
+9.字典dict无序无重复元素集合set
+	>>>d = ['name1':95,'name2':75,'name3':85] //键值存储
+	>>>d['name1'] = 90 //通过键值访问修改
+	>>>'name4' in d //通过in判断key是否存在
+	>>>d.get('name4') //当key不存在时，返回None
+	>>>d.get('name4',-1) //当key不存在时，返回指定的-1
+	>>>d.pop('name1') //,pop()方法删除指定的键值
+
+	>>>s1 = set([1,2,3])
+	>>>s2 = set([2,3,4])
+	>>>s1 & s2 //交集
+	>>>s1 | s2 //并集
+	>>>s1.add(5) //添加key值5,不可添加list
+	>>>s1.remove(5) //删除key值5
