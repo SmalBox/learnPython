@@ -106,3 +106,83 @@ Python Note
 	>>>s1 | s2 //并集
 	>>>s1.add(5) //添加key值5,不可添加list
 	>>>s1.remove(5) //删除key值5
+
+10.函数
+	>>>abs(-100) 100
+	>>>hex(255) 0xff
+	>>>int('123') 123
+	>>>float('12.34') 12.34
+	>>>str(1.23) '1.23'
+	>>>bool(1) 'true'
+	//内置函数 见：http://docs.python.org/3/library/functions.html
+
+	>>>a = abs
+	>>>a(-1)
+	//函数名 是	指向一个函数对象的引用。可将函数名赋给一个变量,起别名
+
+	定义函数
+
+		>>>def function_name (argument):
+		...    return None
+		//定义用def 函数名 括号 参数 冒号 最后用return返回参数
+
+		>>>from file_name import my_def_function_name
+		//在文件的当前目录下启动python导入自定义的函数
+
+		>>>def nop():
+		...    pass
+		//空函数，用pass可以让程序线运行起来，不会出现语法错误
+
+		>>>if not isinstance(x, (int, float)):
+		...    raise TypeError('bad operand type')
+		//用内置函数isinstance()检查变量类型，用raise抛出异常
+
+		>>>import math //math.sqrt() math.sin() math.cos()
+		...def move(x,y,step,angle):
+		...    return x+step*math.cos(angle) , y+step*math.sin(angle)
+		>>>x, y = move(100, 100, 60 ,math.pi/6)
+		>>>print(x, y) //151.96152422706632 70.0
+		>>>r = move(100, 100, 60 ,math.pi/6)
+		>>>print(r) //(151.96152422706632, 70.0)
+		//返回多参数，实际上是返回一个元组，只不过元组可以按位置分别赋值给变量
+			   
+	函数参数
+		
+		位置参数（positional argument）
+		默认参数 (default argument)
+			>>>def add_end(L=None)
+			...    if L is None:
+			...        L = []
+			...    L.append('END')
+			...    return L
+			//None是不变对象，当调用一次默认参数后也不会改变
+			//如果默认参数是可变参数，当调用一次默认参数有可能改变默认参数内容
+			//用None或str这种不变参数来确保默认参数不会变
+		可变参数（variable argument)
+			>>>def calc(*numbers):
+			...    sum = 0
+			...    for n in numbers:
+			...        sum = sum + n * n
+			...    return sum
+			//可以传入任意数量参数
+			>>>calc(1,2) 5
+			>>>nums = [1, 2, 3]
+			>>>calc(*nums) 14
+			//*nums 表示把nums中所有元素当作参数传进去
+		关键字参数（keyword argument）
+			>>>def person(name, age, **kw)
+			...    print('name:', name, 'age:', age, 'other:', kw)
+			//关键字参数目的是为了传入含参属名的参数，即一个dict
+			>>>extra = ['city:' 'Beijing', 'job' 'Engineer']
+			>>>person('Jack', 24, **extra) 
+			//name: Jack age: 24 other:{'city': 'Beijing', 'job', 'Engineer'}
+			//**extra是把extra中的键值复制一份，传入给kw,改动kw，不会影响extra
+		命名关键字参数（named keyword parameter）
+			>>>def person(name, age, *, city, job):
+			...    print(name, age, city, job)
+			//*后的参数为 命名关键字参数
+			>>>person('Jack', 24, city = 'Beijing', job = 'Engineer')
+			//Jack 24 Beijing Engineer
+			>>>def person(name, age, *args, city, job):
+			//如果定义中已经有了可变参数，后面的命名关键字就不需要*了
+			//同样的命名关键字也可以用默认参数
