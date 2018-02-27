@@ -1,7 +1,7 @@
 Python Note
 
 1.I/O
-	print('string1','string2',…) //输出字符串，每个字符串之间会加一个空格输出	
+	print('string1','string2',…) //输出字符串，每个字符串之间会加一个空格输出	{{{
 	print('I\'m ok.') //用反斜杠作为转义符号
 	print(r'\\\n\\') //用r'content'来标识不转义
 	print('''line1
@@ -11,7 +11,7 @@ Python Note
 
 	var = input('prompt text')
 	//输入字符串，用var变量存起来，输入前有提示字符串'prompt text'输出
-	//input()输入的是字符串，如需数字比较需要用int()来转换字符为数字类型
+	//input()输入的是字符串，如需数字比较需要用int()来转换字符为数字类型}}}
 
 2.注释与格式
 	# notes content: //注释以#开始，以：结束
@@ -186,3 +186,17 @@ Python Note
 			>>>def person(name, age, *args, city, job):
 			//如果定义中已经有了可变参数，后面的命名关键字就不需要*了
 			//同样的命名关键字也可以用默认参数
+	
+	递归函数
+
+		尾递归：在函数返回时，调用自身，且return语句不能包含表达式
+		python 没有对尾递归做优化，任何递归函数都会出现栈溢出
+		RecursionError: maximum recursion depth exceeded in comparison
+		汉诺塔（hanoi）
+		def move(n, a, b, c):
+			if n == 1:
+				print(a, '-->', c)
+			else:
+				move(n-1, a, c, b) #n-1个从a到b
+				move(1, a, b, c) #把最下面一个从a到c
+				move(n-1, b, a, c) #把n-1个从b到c
