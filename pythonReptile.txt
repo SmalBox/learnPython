@@ -1,0 +1,31 @@
+#Python Reptile
+
+1.install requests
+	requests的官方网站是：http://www.python-requests.org
+	$pip install requests
+	7个主要方法
+		requests.request() #构造一个请求，支撑以下方法
+		requests.get() #获取HTML网页的主要方法，对应于HTTP的GET
+		requests.head() #获取html网页头信息的方法，对应于HTTP的HEAD
+		requests.post() #向HTML页面提交POST请求，对应于HTTP的POST
+		requests.put() #向HTML页面提交PUT请求，对应于HTTP的PUT
+		requests.path() #向HTML页面提交局部修改请求，对应于HTTP的PATH
+		requests.delete() #向HTML页面删除请求，对应于HTTP的DELETE
+
+	r = requests.get(url,params=None,**kwargs)
+	requests 是 Response 对象
+	Response 对象属性：
+		r.status_code
+			http请求返回状态，200表示成功，404表示失败
+		r.text
+			http响应内容的字符串形式，即url的页面内容
+		r.encoding
+			从HTTP header中猜的的响应内容编码方式
+		r.apparent_encoding
+			从内容中分析出的响应内容编码方式（备选编码方式）
+		r.content
+			HTTP响应内容的二进制形式
+
+	6种常用异常
+		
+
