@@ -1,31 +1,31 @@
 #Python Reptile
 
 1.install requests
-	requestsµÄ¹Ù·½ÍøÕ¾ÊÇ£ºhttp://www.python-requests.org
+	requestsçš„å®˜æ–¹ç½‘ç«™æ˜¯ï¼šhttp://www.python-requests.org
 	$pip install requests
-	7¸öÖ÷Òª·½·¨
-		requests.request() #¹¹ÔìÒ»¸öÇëÇó£¬Ö§³ÅÒÔÏÂ·½·¨
-		requests.get() #»ñÈ¡HTMLÍøÒ³µÄÖ÷Òª·½·¨£¬¶ÔÓ¦ÓÚHTTPµÄGET
-		requests.head() #»ñÈ¡htmlÍøÒ³Í·ĞÅÏ¢µÄ·½·¨£¬¶ÔÓ¦ÓÚHTTPµÄHEAD
-		requests.post() #ÏòHTMLÒ³ÃæÌá½»POSTÇëÇó£¬¶ÔÓ¦ÓÚHTTPµÄPOST
-		requests.put() #ÏòHTMLÒ³ÃæÌá½»PUTÇëÇó£¬¶ÔÓ¦ÓÚHTTPµÄPUT
-		requests.path() #ÏòHTMLÒ³ÃæÌá½»¾Ö²¿ĞŞ¸ÄÇëÇó£¬¶ÔÓ¦ÓÚHTTPµÄPATH
-		requests.delete() #ÏòHTMLÒ³ÃæÉ¾³ıÇëÇó£¬¶ÔÓ¦ÓÚHTTPµÄDELETE
+	7ä¸ªä¸»è¦æ–¹æ³•
+		requests.request() #æ„é€ ä¸€ä¸ªè¯·æ±‚ï¼Œæ”¯æ’‘ä»¥ä¸‹æ–¹æ³•
+		requests.get() #è·å–HTMLç½‘é¡µçš„ä¸»è¦æ–¹æ³•ï¼Œå¯¹åº”äºHTTPçš„GET
+		requests.head() #è·å–htmlç½‘é¡µå¤´ä¿¡æ¯çš„æ–¹æ³•ï¼Œå¯¹åº”äºHTTPçš„HEAD
+		requests.post() #å‘HTMLé¡µé¢æäº¤POSTè¯·æ±‚ï¼Œå¯¹åº”äºHTTPçš„POST
+		requests.put() #å‘HTMLé¡µé¢æäº¤PUTè¯·æ±‚ï¼Œå¯¹åº”äºHTTPçš„PUT
+		requests.path() #å‘HTMLé¡µé¢æäº¤å±€éƒ¨ä¿®æ”¹è¯·æ±‚ï¼Œå¯¹åº”äºHTTPçš„PATH
+		requests.delete() #å‘HTMLé¡µé¢åˆ é™¤è¯·æ±‚ï¼Œå¯¹åº”äºHTTPçš„DELETE
 
 	r = requests.get(url,params=None,**kwargs)
-	requests ÊÇ Response ¶ÔÏó
-	Response ¶ÔÏóÊôĞÔ£º
+	requests æ˜¯ Response å¯¹è±¡
+	Response å¯¹è±¡å±æ€§ï¼š
 		r.status_code
-			httpÇëÇó·µ»Ø×´Ì¬£¬200±íÊ¾³É¹¦£¬404±íÊ¾Ê§°Ü
+			httpè¯·æ±‚è¿”å›çŠ¶æ€ï¼Œ200è¡¨ç¤ºæˆåŠŸï¼Œ404è¡¨ç¤ºå¤±è´¥
 		r.text
-			httpÏìÓ¦ÄÚÈİµÄ×Ö·û´®ĞÎÊ½£¬¼´urlµÄÒ³ÃæÄÚÈİ
+			httpå“åº”å†…å®¹çš„å­—ç¬¦ä¸²å½¢å¼ï¼Œå³urlçš„é¡µé¢å†…å®¹
 		r.encoding
-			´ÓHTTP headerÖĞ²ÂµÄµÄÏìÓ¦ÄÚÈİ±àÂë·½Ê½
+			ä»HTTP headerä¸­çŒœçš„çš„å“åº”å†…å®¹ç¼–ç æ–¹å¼
 		r.apparent_encoding
-			´ÓÄÚÈİÖĞ·ÖÎö³öµÄÏìÓ¦ÄÚÈİ±àÂë·½Ê½£¨±¸Ñ¡±àÂë·½Ê½£©
+			ä»å†…å®¹ä¸­åˆ†æå‡ºçš„å“åº”å†…å®¹ç¼–ç æ–¹å¼ï¼ˆå¤‡é€‰ç¼–ç æ–¹å¼ï¼‰
 		r.content
-			HTTPÏìÓ¦ÄÚÈİµÄ¶ş½øÖÆĞÎÊ½
+			HTTPå“åº”å†…å®¹çš„äºŒè¿›åˆ¶å½¢å¼
 
-	6ÖÖ³£ÓÃÒì³£
+	6ç§å¸¸ç”¨å¼‚å¸¸
 		
 
