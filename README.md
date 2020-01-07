@@ -1,5 +1,25 @@
-Learn Python Note
-	1.pythonNote.txt
-	2.learning.py
-	3.hello.py
-	4.absoluteValue.py
+# 工程目录
+
+   1. .git
+   2. absoluteValue.py
+   3. BMI.py
+   4. factorial.py
+   5. fibonacci.py
+   6. findMinMax.py
+   7. hanoi.py
+   8. hello.py
+   9. learning.py
+   10. my_abs.py
+   11. printTest.py
+   12. product.py
+   13. pyClientTcp.py
+   14. pyClientUdp.py
+   15. pyServerTcp.py
+   16. pyServerUdp.py
+   17. pythonDraw.py
+   18. pythonNote.md
+   19. pythonReptile.txt
+   20. README.md
+   21. trim.py
+   22. updateReadme.py
+   23. __pycache__
